@@ -48,7 +48,7 @@ const Form = () => {
         if (ValidateNote()) {
             try {
                 const res = await axios.post(
-                    'http://localhost/php_CRUD/addNote.php',
+                    'http://localhost/notes-management-app-backend-php/addNote.php',
                     formData,
                     {
                         headers: {
@@ -74,7 +74,7 @@ const Form = () => {
 
         try {
             const res = await axios.post(
-                'http://localhost/php_CRUD/deleteNote.php',
+                'http://localhost/notes-management-app-backend-php/deleteNote.php',
                 { deleteNoteID },
                 {
                     headers: {
@@ -115,7 +115,7 @@ const Form = () => {
         if (ValidateNote() && editNoteID !== null) {
             try {
                 const res = await axios.post(
-                    'http://localhost/php_CRUD/editNote.php',
+                    'http://localhost/notes-management-app-backend-php/editNote.php',
                     { id: editNoteID, title: formData.title, desc: formData.desc },
                     {
                         headers: {
@@ -136,7 +136,7 @@ const Form = () => {
     const fetchingData = async () => {
         try {
             const res = await axios.get(
-                'http://localhost/php_CRUD/fetchData.php',
+                'http://localhost/notes-management-app-backend-php/fetchData.php',
                 {
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
